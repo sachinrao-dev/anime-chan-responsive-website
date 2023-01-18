@@ -28,6 +28,7 @@
         "react"
     ],
     "rules": {
+        "allowExpressions" :true,
         "react/jsx-no-bind": [
             0,
             {
