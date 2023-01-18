@@ -11,22 +11,6 @@ function MasonryComponent({ data }) {
     <Box className={classes.boxModal}>
       <Masonry className={classes.masonryModal}>
         <Card data={data} />
-        {/* {data?.map((item) => (
-          <div className={classes.item}>
-            <div className={classes.description}>
-              <p className={classes.heading}>Anime: </p>
-              <p className={classes.headingDescription}>{item.anime}</p>
-            </div>
-            <div className={classes.description}>
-              <p className={classes.heading}>Character: </p>
-              <p className={classes.headingDescription}>{item.character}</p>
-            </div>
-            <div className={classes.description}>
-              <p className={classes.heading}>Quote: </p>
-              <p className={classes.headingDescription}>{item.quote}</p>
-            </div>
-          </div>
-        ))} */}
       </Masonry>
     </Box>
   );
