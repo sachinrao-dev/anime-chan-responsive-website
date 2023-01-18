@@ -1,6 +1,14 @@
 import { makeStyles } from "@mui/styles";
 
 const useStyle = makeStyles({
+  header: {
+    textAlign: "center",
+    fontSize: "30px",
+    "& a": {
+      fontWeight: "bold",
+      color: "black",
+    },
+  },
   cardContainer: {
     display: "flex",
     flexWrap: "wrap",
@@ -19,6 +27,8 @@ const useStyle = makeStyles({
     display: "flex",
     justifyContent: "center",
     alignSelf: "center",
+    textAlign: "center",
+    margin: "0 auto",
   },
   item: {
     backgroundColor: "grey",
