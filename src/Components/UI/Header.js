@@ -6,7 +6,7 @@ function Header() {
   const classes = useStyle();
   return (
     <div className={classes.header}>
-      <NavLink>AnimeChan</NavLink>
+      <NavLink to="/">AnimeChan</NavLink>
     </div>
   );
 }

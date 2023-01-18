@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -8,11 +9,12 @@ import PropTypes from "prop-types";
 import useStyle from "../Style/DashboardStyle";
 
 function CardComponent({ data }) {
-  const [isShowMore, setIsShowMore] = useState(-1);
+  // const [isShowMore, setIsShowMore] = useState(-1);
+  const navigate = useNavigate();
   const classes = useStyle();
   return (
     <div className={classes.cardContainer}>
-      {data?.map((item, index) => (
+      {data?.map((item) => (
         <Card sx={{ minWidth: 275 }}>
           <CardContent>
             <Typography
@@ -34,18 +36,13 @@ function CardComponent({ data }) {
               color="text.secondary"
               gutterBottom
             >
-              {isShowMore === index ? item.quote : item.quote.substring(0, 50)}
+              {/* {isShowMore === index ? item.quote : item.quote.substring(0, 50)} */}
             </Typography>
           </CardContent>
           <CardActions>
             <Button
               size="small"
-              onClick={() => {
-                if (isShowMore === index) {
-                  return setIsShowMore(-1);
-                }
-                return setIsShowMore(index);
-              }}
+              onClick={() => navigate(`/showMore?title=${item.anime}&page=1`)}
             >
               Show More
             </Button>
