@@ -29,6 +29,7 @@
     ],
     "rules": {
         // "react/prop-types": "off",
+        "allowExpressions" :true,
         "react/jsx-no-bind": [
             0,
             {

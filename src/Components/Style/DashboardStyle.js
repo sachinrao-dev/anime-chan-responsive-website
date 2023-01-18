@@ -1,9 +1,16 @@
 import { makeStyles } from "@mui/styles";
 
 const useStyle = makeStyles({
+  cardContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    width: "100% !important",
+    justifyContent: "space-between",
+    marginBottom: "20px",
+  },
   boxModal: {
     width: "80%",
-    minHeight: 393,
+    minHeight: "393px",
     padding: "2px 16px",
     marginTop: "20px",
   },
@@ -29,7 +36,6 @@ const useStyle = makeStyles({
   description: {
     display: "flex",
     textAlign: "center",
-    // alignItems: "center",
   },
   heading: {
     marginRight: "10px",
@@ -40,7 +46,6 @@ const useStyle = makeStyles({
   headingDescription: {
     fontSize: "20px",
     inlineHeight: "1px",
-    // background: "red",
   },
 });
 

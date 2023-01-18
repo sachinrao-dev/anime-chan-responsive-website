@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-no-useless-fragment */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable array-callback-return */
 import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -8,11 +5,13 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
+import useStyle from "../Style/DashboardStyle";
 
 function CardComponent({ data }) {
   const [isShowMore, setIsShowMore] = useState(-1);
+  const classes = useStyle();
   return (
-    <>
+    <div className={classes.cardContainer}>
       {data?.map((item, index) => (
         <Card sx={{ minWidth: 275 }}>
           <CardContent>
@@ -53,7 +52,7 @@ function CardComponent({ data }) {
           </CardActions>
         </Card>
       ))}
-    </>
+    </div>
   );
 }
 

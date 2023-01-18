@@ -8,12 +8,12 @@ import apiUrls from "../ApiUrls";
 function Dashboard() {
   const classes = useStyle();
   const [data, setData] = useState();
-  const [isloading, setIsLoading] = useState(false);
+  // const [isloading, setIsLoading] = useState(false);
   useEffect(() => {
-    setIsLoading(true);
+    // setIsLoading(true);
     axios.get(apiUrls.tenQuOtes).then((res) => {
       setData(res.data);
-      setIsLoading(false);
+      // setIsLoading(false);
     });
   }, []);
   return (
