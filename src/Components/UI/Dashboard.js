@@ -15,10 +15,7 @@ function Dashboard() {
   }, []);
   return (
     <div className={classes.container}>
-      {/* <MasonryComponent data={data} /> */}
-      {/* <MasonryComponent data={data} /> */}
       {!data ? <CircularIndeterminate /> : <MasonryComponent data={data} />}
-      {/* <MasonryComponent data={data} /> */}
     </div>
   );
 }
