@@ -13,6 +13,7 @@ import useStyle from "../Style/DashboardStyle";
 function ShowMore() {
   const [params] = useSearchParams();
   const page = params.get("page");
+  console.log(page);
   const classes = useStyle();
   const location = useLocation();
   const { title } = location.state;
