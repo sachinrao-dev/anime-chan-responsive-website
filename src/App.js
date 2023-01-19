@@ -12,7 +12,8 @@ function App() {
         <Route path="/*" element={<Dashboard />} />
         <Route path="/">
           <Route path="/" element={<Dashboard />} />
-          <Route path="showMore" element={<ShowMore />} />
+          <Route path="/showMore" element={<ShowMore />} />
+          <Route path="/showMore/:page" element={<ShowMore />} />
         </Route>
       </Routes>
     </div>
