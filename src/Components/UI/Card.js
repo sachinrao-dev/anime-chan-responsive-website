@@ -9,12 +9,15 @@ import PropTypes from "prop-types";
 import useStyle from "../Style/DashboardStyle";
 
 function CardComponent({ data }) {
-  // const [isShowMore, setIsShowMore] = useState(-1);
   const navigate = useNavigate();
   const classes = useStyle();
+  const ToNavigate = (index) => {
+    const title = data[index].anime;
+    navigate(`/showMore?title=${title}&page=1`, { state: { title } });
+  };
   return (
     <div className={classes.cardContainer}>
-      {data?.map((item) => (
+      {data?.map((item, index) => (
         <Card sx={{ minWidth: 275 }}>
           <CardContent>
             <Typography
@@ -42,7 +45,9 @@ function CardComponent({ data }) {
           <CardActions>
             <Button
               size="small"
-              onClick={() => navigate(`/showMore?title=${item.anime}&page=1`)}
+              onClick={() => {
+                ToNavigate(index);
+              }}
             >
               Show More
             </Button>
