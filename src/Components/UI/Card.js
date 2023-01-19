@@ -39,7 +39,7 @@ function CardComponent({ data }) {
               color="text.secondary"
               gutterBottom
             >
-              {/* {isShowMore === index ? item.quote : item.quote.substring(0, 50)} */}
+              {item.quote.substring(0, 50)}
             </Typography>
           </CardContent>
           <CardActions>
