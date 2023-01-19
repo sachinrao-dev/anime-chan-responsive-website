@@ -28,6 +28,7 @@
         "react"
     ],
     "rules": {
+        "no-unused-vars": ["error", {"args": "after-used", "ignoreRestSiblings": false }],
         "react/jsx-no-bind": [
             0,
             {
