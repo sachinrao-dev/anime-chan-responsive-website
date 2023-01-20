@@ -1,12 +1,13 @@
 import React from "react";
 import CircularProgress from "@mui/material/CircularProgress";
-import Box from "@mui/material/Box";
+import useStyle from "../Style/DashboardStyle";
 
 function CircularIndeterminate() {
+  const classes = useStyle();
   return (
-    <Box sx={{ display: "flex" }}>
+    <div className={classes.buffer}>
       <CircularProgress />
-    </Box>
+    </div>
   );
 }
 

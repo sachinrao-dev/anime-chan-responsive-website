@@ -13,7 +13,7 @@ function CardComponent({ data }) {
   const classes = useStyle();
   const ToNavigate = (index) => {
     const title = data[index].anime;
-    navigate(`/showMore?title=${title}&page=1`, { state: { title } });
+    navigate(`/showMore?title=${title}&page=1`);
   };
   return (
     <div className={classes.cardContainer}>
