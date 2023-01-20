@@ -1,27 +1,45 @@
+/* eslint-disable react/no-unstable-nested-components */
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useSearchParams, useLocation } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import CardContent from "@mui/material/CardContent";
 import Masonry from "@mui/lab/Masonry";
 import Box from "@mui/material/Box";
+import Pagination from "@mui/material/Pagination";
+import PaginationItem from "@mui/material/PaginationItem";
 import CircularIndeterminate from "./CircularIndeterminate";
-import apiUrls from "../ApiUrls";
 import useStyle from "../Style/DashboardStyle";
 
 function ShowMore() {
+  const [paginationPage] = useState(1);
+  const [paginationData, setPaginationData] = useState(null);
   const [params] = useSearchParams();
   const page = params.get("page");
-  const classes = useStyle();
-  const location = useLocation();
-  const { title } = location.state;
-  const [paginationData, setPaginationData] = useState(null);
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const title = urlParams.get("title");
+  const navigate = useNavigate();
   useEffect(() => {
-    axios.get(apiUrls.paginationUrl).then((res) => {
-      setPaginationData(res.data);
-    });
-  }, []);
+    axios
+      .get(
+        `https://animechan.vercel.app/api/quotes/anime?title=${title}&page=${
+          page || "1"
+        }`,
+      )
+      .then((res) => {
+        setPaginationData(res.data);
+      });
+  }, [page, title]);
+  const handleClick = (event, value) => {
+    navigate(`/showMore?title=${title}&page=${value}`);
+  };
+  // const handlePrev = () =>{
+
+  // }
+
+  const classes = useStyle();
   return (
     <div className={classes.container}>
       {!paginationData ? (
@@ -55,6 +73,30 @@ function ShowMore() {
           </Masonry>
         </Box>
       )}
+      <div className={classes.paginationContainer}>
+        <Pagination
+          count={10}
+          onChange={handleClick}
+          paginationPage={paginationPage}
+          renderItem={(item) => (
+            <PaginationItem
+              components={{
+                next: () => (
+                  <button type="button">
+                    Next
+                  </button>
+                ),
+                previous: () => (
+                  <button type="button">
+                    Previous
+                  </button>
+                ),
+              }}
+              {...item}
+            />
+          )}
+        />
+      </div>
     </div>
   );
 }

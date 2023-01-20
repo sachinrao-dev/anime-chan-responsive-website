@@ -21,23 +21,18 @@ const useStyle = makeStyles({
     minHeight: "393px",
     padding: "2px 16px",
     marginTop: "20px",
+    display: "flex",
+    // justifyContent: "center",
   },
   container: {
     width: "100%",
     display: "flex",
     justifyContent: "center",
     alignSelf: "center",
+    flexDirection: "column",
     textAlign: "center",
     margin: "0 auto",
-  },
-  item: {
-    backgroundColor: "grey",
-    textAlign: "center",
-    boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
-    transition: 0.3,
-    "& hover": {
-      boxShadow: "0 8px 16px 0 rgba(0,0,0,0.2)",
-    },
+    alignContent: "center",
   },
   masonryModal: {
     columns: 5,
@@ -56,6 +51,12 @@ const useStyle = makeStyles({
   headingDescription: {
     fontSize: "20px",
     inlineHeight: "1px",
+  },
+  paginationContainer: {
+    position: "relative",
+    top: "50px",
+    // background: "red",
+    left: "20px",
   },
 });
 
