@@ -10,8 +10,8 @@ const useStyle = makeStyles({
     },
   },
   cardContainer: {
-    display: "flex",
-    flexWrap: "wrap",
+    // display: "flex",
+    // flexWrap: "wrap",
     width: "100% !important",
     justifyContent: "space-between",
     marginBottom: "20px",
@@ -22,17 +22,13 @@ const useStyle = makeStyles({
     padding: "2px 16px",
     marginTop: "20px",
     display: "flex",
-    // justifyContent: "center",
   },
   container: {
-    width: "100%",
-    display: "flex",
-    justifyContent: "center",
+    maxWidth: "1000px",
     alignSelf: "center",
     flexDirection: "column",
     textAlign: "center",
-    margin: "0 auto",
-    alignContent: "center",
+    alignItems: "center",
   },
   masonryModal: {
     columns: 5,
@@ -55,8 +51,18 @@ const useStyle = makeStyles({
   paginationContainer: {
     position: "relative",
     top: "50px",
-    // background: "red",
     left: "20px",
+  },
+  pagination: {
+    background: "red",
+  },
+  buffer: {
+    // background: "red",
+    width: "10%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "0 auto",
   },
 });
 

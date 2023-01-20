@@ -13,15 +13,16 @@ import CircularIndeterminate from "./CircularIndeterminate";
 import useStyle from "../Style/DashboardStyle";
 
 function ShowMore() {
-  const [paginationPage] = useState(1);
   const [paginationData, setPaginationData] = useState(null);
   const [params] = useSearchParams();
-  const page = params.get("page");
+  const page = params?.get("page");
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
+  const [paginationPage, setPaginationPage] = useState(page);
   const title = urlParams.get("title");
   const navigate = useNavigate();
   useEffect(() => {
+    setPaginationPage(page);
     axios
       .get(
         `https://animechan.vercel.app/api/quotes/anime?title=${title}&page=${
@@ -34,11 +35,9 @@ function ShowMore() {
   }, [page, title]);
   const handleClick = (event, value) => {
     navigate(`/showMore?title=${title}&page=${value}`);
+    // setPaginationPage(value);
   };
-  // const handlePrev = () =>{
-
-  // }
-
+  console.log(paginationPage, "page number");
   const classes = useStyle();
   return (
     <div className={classes.container}>
@@ -78,16 +77,21 @@ function ShowMore() {
           count={10}
           onChange={handleClick}
           paginationPage={paginationPage}
+          page={parseInt(paginationPage, 10)}
           renderItem={(item) => (
             <PaginationItem
               components={{
                 next: () => (
-                  <button type="button">
+                  <button
+                    type="button"
+                  >
                     Next
                   </button>
                 ),
                 previous: () => (
-                  <button type="button">
+                  <button
+                    type="button"
+                  >
                     Previous
                   </button>
                 ),
