@@ -10,8 +10,8 @@ const useStyle = makeStyles({
     },
   },
   cardContainer: {
-    // display: "flex",
-    // flexWrap: "wrap",
+    display: "flex",
+    flexWrap: "wrap",
     width: "100% !important",
     justifyContent: "space-between",
     marginBottom: "20px",
@@ -57,7 +57,6 @@ const useStyle = makeStyles({
     background: "red",
   },
   buffer: {
-    // background: "red",
     width: "10%",
     display: "flex",
     justifyContent: "center",

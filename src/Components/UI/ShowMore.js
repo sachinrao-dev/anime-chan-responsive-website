@@ -35,9 +35,7 @@ function ShowMore() {
   }, [page, title]);
   const handleClick = (event, value) => {
     navigate(`/showMore?title=${title}&page=${value}`);
-    // setPaginationPage(value);
   };
-  console.log(paginationPage, "page number");
   const classes = useStyle();
   return (
     <div className={classes.container}>
