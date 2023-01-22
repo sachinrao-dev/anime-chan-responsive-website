@@ -9,7 +9,7 @@ function MasonryComponent({ data }) {
   const classes = useStyle();
   return (
     <Box className={classes.boxModal}>
-      <Masonry className={classes.masonryModal}>
+      <Masonry columns={4} spacing={2}>
         <Card data={data} />
       </Masonry>
     </Box>

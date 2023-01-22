@@ -21,18 +21,14 @@ const useStyle = makeStyles({
     minHeight: "393px",
     padding: "2px 16px",
     marginTop: "20px",
-    display: "flex",
   },
   container: {
-    maxWidth: "1000px",
+    display: "flex",
+    justifyContent: "center",
     alignSelf: "center",
     flexDirection: "column",
     textAlign: "center",
     alignItems: "center",
-  },
-  masonryModal: {
-    columns: 5,
-    spacing: 3,
   },
   description: {
     display: "flex",
