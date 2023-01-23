@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/anime-chan-responsive-website/static/css/main.e6c13ad2.css",
+    "main.js": "/anime-chan-responsive-website/static/js/main.de4c469b.js",
+    "index.html": "/anime-chan-responsive-website/index.html",
+    "main.e6c13ad2.css.map": "/anime-chan-responsive-website/static/css/main.e6c13ad2.css.map",
+    "main.de4c469b.js.map": "/anime-chan-responsive-website/static/js/main.de4c469b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.de4c469b.js"
+  ]
+}
